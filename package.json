@@ -1,6 +1,6 @@
 {
   "name": "@weiran.zsd/multi-eslint-rule-config",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "Allows you to configure the same ESLint rule multiple times.",
   "keywords": [
@@ -42,5 +42,9 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
