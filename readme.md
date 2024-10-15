@@ -6,7 +6,15 @@ This plugin allows you to configure the same ESLint rule multiple times, which i
 
 ## Usage
 
-> **Important:** This plugin requires ESLint v8.23.0 or higher and you must be using the [new configuration system](https://eslint.org/docs/latest/use/configure/configuration-files).
+> **Important:** This plugin requires ESLint v8.57.1 or higher and you must be using the [new configuration system(aka `eslint.config.js`)](https://eslint.org/docs/latest/use/configure/configuration-files).
+
+```bash
+$ npm i @weiran.zsd/multi-eslint-rule-config -D
+
+$ yarn add @weiran.zsd/multi-eslint-rule-config -D
+
+$ pnpm add @weiran.zsd/multi-eslint-rule-config -D
+```
 
 ### 1. eslint builtin rules
 
@@ -15,8 +23,8 @@ import { config } from "@weiran.zsd/multi-eslint-rule-config";
 
 export default [
   config({
-    rule: "no-debugger",
-    ruleConfig: ["error"],
+    rule: "no-restricted-imports",
+    ruleConfig: ["error", { patterns: [{ paths: ["lodash", "underscore"] }] }],
   }),
 ];
 ```
@@ -29,14 +37,17 @@ import { config } from "@weiran.zsd/multi-eslint-rule-config";
 export default [
   config([
     {
-      rule: "no-debugger",
-      asRuleName: "no-debugger1",
-      ruleConfig: ["error"],
+      rule: "no-restricted-imports",
+      asRuleName: "no-lodash",
+      ruleConfig: [
+        "error",
+        { patterns: [{ paths: ["lodash", "underscore"] }] },
+      ],
     },
     {
-      rule: "no-debugger",
-      asRuleName: "no-debugger2",
-      ruleConfig: ["warn"],
+      rule: "no-restricted-imports",
+      asRuleName: "prefer-preact",
+      ruleConfig: ["error", { patterns: [{ paths: ["react"] }] }],
     },
   ]),
 ];
@@ -51,7 +62,7 @@ import awesomePlugin from "eslint-plugin-awesome-plugin"; // replace with your p
 export default [
   config({
     rule: awesomePlugin.rules["awesome-rule"],
-    asRule: "awesome-rule",
+    asRuleName: "awesome-rule",
     ruleConfig: ["error"],
   }),
 ];
