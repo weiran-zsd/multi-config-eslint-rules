@@ -1,0 +1,46 @@
+{
+  "name": "@weiran.zsd/multi-eslint-rule-config",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Allows you to configure the same ESLint rule multiple times.",
+  "keywords": [
+    "node.js",
+    "node",
+    "esm"
+  ],
+  "license": "MIT",
+  "author": "唯然<weiran.zsd@outlook.com",
+  "type": "commonjs",
+  "exports": "./lib/mod.js",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib",
+    "!**/*.test.{js,ts}"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "prepare": "husky",
+    "prettier": "prettier -w lib",
+    "release": "npm test && standard-version",
+    "test": "node --test",
+    "test:watch": "node --test --watch",
+    "test:coverage": "node --test --experimental-test-coverage"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "eslint": "^9.12.0",
+    "eslint-plugin-n": "^17.11.1",
+    "globals": "^15.11.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "standard-version": "^9.3.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.57.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
