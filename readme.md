@@ -24,7 +24,7 @@ import { config } from "@weiran.zsd/multi-eslint-rule-config";
 export default [
   config({
     rule: "no-restricted-imports",
-    ruleConfig: ["error", { patterns: [{ paths: ["lodash", "underscore"] }] }],
+    ruleConfig: ["error", { paths: ["lodash", "underscore"] }],
   }),
 ];
 ```
@@ -39,15 +39,12 @@ export default [
     {
       rule: "no-restricted-imports",
       asRuleName: "no-lodash",
-      ruleConfig: [
-        "error",
-        { patterns: [{ paths: ["lodash", "underscore"] }] },
-      ],
+      ruleConfig: ["error", { paths: ["lodash", "underscore"] }],
     },
     {
       rule: "no-restricted-imports",
       asRuleName: "prefer-preact",
-      ruleConfig: ["error", { patterns: [{ paths: ["react"] }] }],
+      ruleConfig: ["error", { paths: ["react"] }],
     },
   ]),
 ];
