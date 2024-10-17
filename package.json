@@ -12,6 +12,7 @@
   "author": "唯然<weiran.zsd@outlook.com",
   "type": "commonjs",
   "exports": "./lib/mod.js",
+  "types": "./lib/mod.d.ts",
   "files": [
     "LICENSE",
     "README.md",
