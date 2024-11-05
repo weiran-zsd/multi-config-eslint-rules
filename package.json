@@ -10,6 +10,10 @@
   ],
   "license": "MIT",
   "author": "唯然<weiran.zsd@outlook.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weiran-zsd/multi-config-eslint-rules"
+  },
   "type": "commonjs",
   "exports": "./lib/mod.js",
   "types": "./lib/mod.d.ts",
